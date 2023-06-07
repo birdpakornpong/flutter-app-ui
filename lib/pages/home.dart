@@ -1,8 +1,6 @@
 import 'package:eflutter_app/pages/cart.dart';
 import 'package:eflutter_app/pages/user-info.dart';
 import 'package:flutter/material.dart';
-
-import 'about-me.dart';
 import 'index.dart';
 import 'search.dart';
 
