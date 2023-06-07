@@ -36,12 +36,12 @@ class Product extends StatelessWidget {
                 padding: const EdgeInsets.all(10.0),
                 child: ListView(
                   children: [
-                    Card(
+                    const Card(
                       child: Image(
                           image: NetworkImage(
                               "https://cdn.pixabay.com/photo/2022/10/21/08/39/cat-7536508_1280.jpg")),
                     ),
-                    Text('Size S254'),
+                    const Text('Size S254'),
                     TitleBarButton(title: 'สินค้าใกล้เคียง', onPress: () {}),
                     SizedBox(
                       height: 200,

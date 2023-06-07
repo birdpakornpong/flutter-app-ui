@@ -3,7 +3,6 @@ import 'package:eflutter_app/pages/product.dart';
 import 'package:flutter/material.dart';
 
 import '../widget/product_slice.dart';
-import '../widget/titlebar_button.dart';
 
 class CategoryP extends StatefulWidget {
   const CategoryP({super.key});
@@ -55,7 +54,7 @@ class _CategoryPState extends State<CategoryP> {
                                 return const Product();
                               }));
                             },
-                            child: SizedBox(
+                            child: const SizedBox(
                                 height: 200,
                                 child:
                                     ProductSlice(city: 'bkb', country: 'th'))),
@@ -66,7 +65,7 @@ class _CategoryPState extends State<CategoryP> {
                                 return const Product();
                               }));
                             },
-                            child: SizedBox(
+                            child: const SizedBox(
                                 height: 200,
                                 child:
                                     ProductSlice(city: 'bkb', country: 'th'))),
@@ -77,7 +76,7 @@ class _CategoryPState extends State<CategoryP> {
                                 return const Product();
                               }));
                             },
-                            child: SizedBox(
+                            child: const SizedBox(
                                 height: 200,
                                 child:
                                     ProductSlice(city: 'bkb', country: 'th'))),
@@ -88,7 +87,7 @@ class _CategoryPState extends State<CategoryP> {
                                 return const Product();
                               }));
                             },
-                            child: SizedBox(
+                            child: const SizedBox(
                                 height: 200,
                                 child:
                                     ProductSlice(city: 'bkb', country: 'th'))),
@@ -99,7 +98,7 @@ class _CategoryPState extends State<CategoryP> {
                                 return const Product();
                               }));
                             },
-                            child: SizedBox(
+                            child: const SizedBox(
                                 height: 200,
                                 child:
                                     ProductSlice(city: 'bkb', country: 'th'))),

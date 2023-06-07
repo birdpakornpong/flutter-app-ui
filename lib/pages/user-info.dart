@@ -11,27 +11,34 @@ class _UserInfoState extends State<UserInfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("โปรไฟล์")),
+        appBar: AppBar(title: const Text("โปรไฟล์")),
         body: ListView(
           children: [
             Card(
                 margin: EdgeInsets.zero,
                 shape: RoundedRectangleBorder(
-                  side: BorderSide(
+                  side: const BorderSide(
                     color: Colors.grey,
                   ),
                   borderRadius: BorderRadius.circular(0.0),
                 ),
-                child: ListTile(title: Text('One-line ListTile'))),
+                child: const ListTile(
+                    minVerticalPadding: 30,
+                    leading: CircleAvatar(
+                      radius: 40,
+                      backgroundImage: NetworkImage(
+                          "https://cdn.pixabay.com/photo/2022/10/21/08/39/cat-7536508_1280.jpg"),
+                    ),
+                    title: Text('One-line ListTile'))),
             Card(
               margin: EdgeInsets.zero,
               shape: RoundedRectangleBorder(
-                side: BorderSide(
+                side: const BorderSide(
                   color: Colors.grey,
                 ),
                 borderRadius: BorderRadius.circular(0.0),
               ),
-              child: ListTile(
+              child: const ListTile(
                 leading: FlutterLogo(),
                 title: Text('One-line with both widgets'),
                 trailing: Icon(Icons.more_vert),
@@ -40,12 +47,12 @@ class _UserInfoState extends State<UserInfo> {
             Card(
               margin: EdgeInsets.zero,
               shape: RoundedRectangleBorder(
-                side: BorderSide(
+                side: const BorderSide(
                   color: Colors.grey,
                 ),
                 borderRadius: BorderRadius.circular(0.0),
               ),
-              child: ListTile(
+              child: const ListTile(
                 leading: FlutterLogo(),
                 title: Text('One-line with both widgets'),
                 trailing: Icon(Icons.more_vert),
@@ -54,12 +61,12 @@ class _UserInfoState extends State<UserInfo> {
             Card(
               margin: EdgeInsets.zero,
               shape: RoundedRectangleBorder(
-                side: BorderSide(
+                side: const BorderSide(
                   color: Colors.grey,
                 ),
                 borderRadius: BorderRadius.circular(0.0),
               ),
-              child: ListTile(
+              child: const ListTile(
                 leading: FlutterLogo(),
                 title: Text('One-line with both widgets'),
                 trailing: Icon(Icons.more_vert),
@@ -68,12 +75,12 @@ class _UserInfoState extends State<UserInfo> {
             Card(
               margin: EdgeInsets.zero,
               shape: RoundedRectangleBorder(
-                side: BorderSide(
+                side: const BorderSide(
                   color: Colors.grey,
                 ),
                 borderRadius: BorderRadius.circular(0.0),
               ),
-              child: ListTile(
+              child: const ListTile(
                 leading: FlutterLogo(),
                 title: Text('ออกจากระบบ'),
                 trailing: Icon(Icons.more_vert),

@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: IndexedStack(
         index: index,
-        children: [const Index(), const Search(), const Cart(), UserInfo()],
+        children: const [Index(), Search(), Cart(), UserInfo()],
       ),
       bottomNavigationBar: NavigationBar(
           selectedIndex: index,

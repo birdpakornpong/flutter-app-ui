@@ -1,6 +1,5 @@
-import 'package:eflutter_app/pages/category.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import '../widget/index/category-list.dart';
 import '../widget/product_slice.dart';
 import '../widget/titlebar_button.dart';
 
@@ -13,95 +12,7 @@ class Index extends StatelessWidget {
         appBar: AppBar(title: const Text('Iffy')),
         body: ListView(
           children: [
-            GridView(
-              shrinkWrap: true,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3, childAspectRatio: 2 / 2),
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return const CategoryP();
-                    }));
-                  },
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.all(6.0),
-                        child: CircleAvatar(
-                          radius: 40,
-                          backgroundImage: NetworkImage(
-                              "https://cdn.pixabay.com/photo/2022/10/21/08/39/cat-7536508_1280.jpg"),
-                        ),
-                      ),
-                      Text('product')
-                    ],
-                  ),
-                ),
-                Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(6.0),
-                      child: CircleAvatar(
-                        radius: 40,
-                        backgroundImage: NetworkImage(
-                            "https://cdn.pixabay.com/photo/2022/10/21/08/39/cat-7536508_1280.jpg"),
-                      ),
-                    ),
-                    Text('product')
-                  ],
-                ),
-                Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(6.0),
-                      child: CircleAvatar(
-                        radius: 40,
-                        backgroundImage: NetworkImage(
-                            "https://cdn.pixabay.com/photo/2022/10/21/08/39/cat-7536508_1280.jpg"),
-                      ),
-                    ),
-                    Text('product')
-                  ],
-                ),
-                Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(6.0),
-                      child: CircleAvatar(
-                        radius: 40,
-                        backgroundImage: NetworkImage(
-                            "https://cdn.pixabay.com/photo/2022/10/21/08/39/cat-7536508_1280.jpg"),
-                      ),
-                    ),
-                    Text('product')
-                  ],
-                ),
-                Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(6.0),
-                      child: CircleAvatar(
-                        radius: 40,
-                      ),
-                    ),
-                    Text('product')
-                  ],
-                ),
-                Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(6.0),
-                      child: CircleAvatar(
-                        radius: 40,
-                      ),
-                    ),
-                    Text('product')
-                  ],
-                ),
-              ],
-            ),
+            CategoryList(),
 
             TitleBarButton(title: 'สินค้าเข้าใหม่', onPress: () {}),
             SizedBox(

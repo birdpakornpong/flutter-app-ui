@@ -30,16 +30,16 @@ class _CartState extends State<Cart> {
                   itemBuilder: (BuildContext context, int index) {
                     FoodMenu food = menu[index];
                     return ListTile(
-                      leading: Image(
+                      leading: const Image(
                           image: NetworkImage(
                               "https://cdn.pixabay.com/photo/2022/10/21/08/39/cat-7536508_1280.jpg")),
                       title: Text(
                         food.name,
                         style: const TextStyle(fontSize: 30),
                       ),
-                      subtitle: Text('ราคา ' + food.price + ' บาท'),
+                      subtitle: Text('ราคา ${food.price} บาท'),
                       onTap: () {
-                        print("คุณเลือกอาหารชื่อว่า =" + food.name);
+                        print("คุณเลือกอาหารชื่อว่า =${food.name}");
                       },
                     );
                   }),
