@@ -1,3 +1,4 @@
+import 'package:eflutter_app/pages/address_add.dart';
 import 'package:flutter/material.dart';
 
 import '../model/FoodMenu.dart';
@@ -22,9 +23,10 @@ class _AddressListState extends State<AddressList> {
         appBar: AppBar(
           title: const Text('ที่อยู่'),
         ),
-        body: Column(
+        body: ListView(
           children: [
-            Expanded(
+            SizedBox(
+              height: 100,
               child: ListView.builder(
                   itemCount: menu.length,
                   itemBuilder: (BuildContext context, int index) {
@@ -52,6 +54,20 @@ class _AddressListState extends State<AddressList> {
                     );
                   }),
             ),
+            SizedBox(
+                width: MediaQuery.of(context).size.width * 0.5,
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        shape: const RoundedRectangleBorder()),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return const AddressAdd();
+                        }),
+                      );
+                    },
+                    child: const Text('เพิ่มที่อยู่'))),
           ],
         ));
   }
