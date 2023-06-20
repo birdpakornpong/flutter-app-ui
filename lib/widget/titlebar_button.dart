@@ -9,9 +9,10 @@ class TitleBarButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
-        // TextButton(onPressed: () => onPress(), child: const Text('View All'))
+        TextButton(onPressed: () => onPress(), child: const Text('View All'))
       ],
     ));
   }

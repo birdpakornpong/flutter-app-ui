@@ -70,14 +70,14 @@ class Product extends StatelessWidget {
                             style: ElevatedButton.styleFrom(
                                 shape: const RoundedRectangleBorder()),
                             onPressed: () {},
-                            child: const Text('test'))),
+                            child: const Text('หยิบใส่รถเข็น'))),
                     SizedBox(
                         width: MediaQuery.of(context).size.width * 0.5,
                         child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 shape: const RoundedRectangleBorder()),
                             onPressed: () {},
-                            child: const Text('test'))),
+                            child: const Text('ซื้อสินค้า'))),
                   ],
                 ))
           ],

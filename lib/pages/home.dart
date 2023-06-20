@@ -29,9 +29,10 @@ class _HomePageState extends State<HomePage> {
             });
           },
           destinations: const [
-            NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-            NavigationDestination(icon: Icon(Icons.umbrella), label: 'User'),
-            NavigationDestination(icon: Icon(Icons.pageview), label: 'Cart'),
+            NavigationDestination(icon: Icon(Icons.home), label: 'Shop'),
+            NavigationDestination(icon: Icon(Icons.umbrella), label: 'Explore'),
+            NavigationDestination(
+                icon: Icon(Icons.card_travel_outlined), label: 'Cart'),
             NavigationDestination(icon: Icon(Icons.undo), label: 'Account')
           ]),
     );
