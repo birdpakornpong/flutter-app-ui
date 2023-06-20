@@ -1,3 +1,4 @@
+import 'package:eflutter_app/pages/address_list.dart';
 import 'package:flutter/material.dart';
 
 import '../model/FoodMenu.dart';
@@ -66,7 +67,14 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
                         child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 shape: const RoundedRectangleBorder()),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return const AddressList();
+                                }),
+                              );
+                            },
                             child: const Text('ยืนยันคำสั่งซื้อ'))),
                   ],
                 ))
