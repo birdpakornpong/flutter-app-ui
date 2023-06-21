@@ -76,7 +76,14 @@ class Product extends StatelessWidget {
                         child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 shape: const RoundedRectangleBorder()),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return const Cart();
+                                }),
+                              );
+                            },
                             child: const Text('ซื้อสินค้า'))),
                   ],
                 ))

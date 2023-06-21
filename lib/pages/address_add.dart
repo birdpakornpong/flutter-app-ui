@@ -1,4 +1,3 @@
-import 'package:eflutter_app/pages/address_list.dart';
 import 'package:flutter/material.dart';
 
 import '../model/FoodMenu.dart';
@@ -17,68 +16,101 @@ class _AddressAddState extends State<AddressAdd> {
     FoodMenu(name: "กระเพราหมู", price: "500", img: 'assets/images/pown.jpeg'),
   ];
 
+  List<DropdownMenuItem<String>> get dropdownItems {
+    List<DropdownMenuItem<String>> menuItems = [
+      const DropdownMenuItem(value: "USA", child: Text("USAs")),
+      const DropdownMenuItem(value: "Canada", child: Text("Canada")),
+      const DropdownMenuItem(value: "Brazil", child: Text("Brazil")),
+      const DropdownMenuItem(value: "England", child: Text("England")),
+    ];
+    return menuItems;
+  }
+
+  String selectedValue = "USA";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: const Text('ที่อยู่ใหม่'),
         ),
-        body: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('ที่อยู่จัดส่ง'),
-                  Icon(Icons.add, size: 20),
-                ],
-              ),
-            ),
-            Expanded(
-              child: ListView.builder(
-                  itemCount: menu.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    FoodMenu food = menu[index];
-                    return ListTile(
-                      leading: const Image(
-                          image: NetworkImage(
-                              "https://cdn.pixabay.com/photo/2022/10/21/08/39/cat-7536508_1280.jpg")),
-                      title: Text(
-                        food.name,
-                        style: const TextStyle(fontSize: 30),
-                      ),
-                      subtitle: Text('ราคา ${food.price} บาท'),
-                      onTap: () {
-                        print("คุณเลือกอาหารชื่อว่า =${food.name}");
-                      },
-                    );
-                  }),
-            ),
-            SizedBox(
-                height: 80,
-                child: GridView(
-                  shrinkWrap: true,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 1, childAspectRatio: 10 / 2),
+        body: Card(
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Column(children: [
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 10.0),
+                child: const Row(
                   children: [
-                    SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.5,
-                        child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                shape: const RoundedRectangleBorder()),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) {
-                                  return const AddressList();
-                                }),
-                              );
-                            },
-                            child: const Text('ยืนยันคำสั่งซื้อ'))),
+                    Text(
+                      'ชื่อผู้ใช้',
+                    ),
                   ],
-                ))
-          ],
+                ),
+              ),
+              const SizedBox(
+                child: TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'ชื่อ - นามสกุล',
+                  ),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 10.0),
+                child: const Row(
+                  children: [
+                    Text(
+                      'หมายเลขโทรศัพท์',
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                child: TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'หมายเลขโทรศัพท์',
+                  ),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 10.0),
+                child: const Row(
+                  children: [
+                    Text(
+                      'จังหวัด',
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                child: InputDecorator(
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    contentPadding: EdgeInsets.all(8),
+                  ),
+                  child: DropdownButtonHideUnderline(
+                      child: DropdownButton(
+                    isExpanded: true, //make true to take width of parent widget
+                    value: selectedValue,
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        selectedValue = newValue!;
+                      });
+                    },
+                    items: dropdownItems,
+                    style: const TextStyle(
+                        //te
+                        color: Colors.grey, //Font color
+                        fontSize: 20 //font size on dropdown button
+                        ),
+                  )),
+                ),
+              ),
+            ]),
+          ),
         ));
   }
 }

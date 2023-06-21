@@ -32,7 +32,7 @@ class _AddressListState extends State<AddressList> {
                   itemBuilder: (BuildContext context, int index) {
                     FoodMenu food = menu[index];
                     return Card(
-                      margin: EdgeInsets.all(0),
+                      margin: const EdgeInsets.all(0),
                       elevation: 0,
                       shape: RoundedRectangleBorder(
                         side: BorderSide(
@@ -41,8 +41,8 @@ class _AddressListState extends State<AddressList> {
                         borderRadius:
                             const BorderRadius.all(Radius.circular(0)),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [

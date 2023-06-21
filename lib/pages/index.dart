@@ -12,7 +12,7 @@ class Index extends StatelessWidget {
         appBar: AppBar(title: const Text('Iffy')),
         body: ListView(
           children: [
-            CategoryList(),
+            const CategoryList(),
 
             TitleBarButton(title: 'สินค้าเข้าใหม่', onPress: () {}),
             SizedBox(
