@@ -41,7 +41,7 @@ class _AddressListState extends State<AddressList> {
                         borderRadius:
                             const BorderRadius.all(Radius.circular(0)),
                       ),
-                      child: const Padding(
+                      child: Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,

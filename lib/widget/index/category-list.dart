@@ -23,8 +23,8 @@ class _CategoryListState extends State<CategoryList> {
               return const CategoryP();
             }));
           },
-          child: const Column(
-            children: [
+          child: Column(
+            children: const [
               Padding(
                 padding: EdgeInsets.all(6.0),
                 child: CircleAvatar(
@@ -37,8 +37,8 @@ class _CategoryListState extends State<CategoryList> {
             ],
           ),
         ),
-        const Column(
-          children: [
+        Column(
+          children: const [
             Padding(
               padding: EdgeInsets.all(6.0),
               child: CircleAvatar(
@@ -50,8 +50,8 @@ class _CategoryListState extends State<CategoryList> {
             Text('product')
           ],
         ),
-        const Column(
-          children: [
+        Column(
+          children: const [
             Padding(
               padding: EdgeInsets.all(6.0),
               child: CircleAvatar(
@@ -63,8 +63,8 @@ class _CategoryListState extends State<CategoryList> {
             Text('product')
           ],
         ),
-        const Column(
-          children: [
+        Column(
+          children: const [
             Padding(
               padding: EdgeInsets.all(6.0),
               child: CircleAvatar(
@@ -76,8 +76,8 @@ class _CategoryListState extends State<CategoryList> {
             Text('product')
           ],
         ),
-        const Column(
-          children: [
+        Column(
+          children: const [
             Padding(
               padding: EdgeInsets.all(6.0),
               child: CircleAvatar(
@@ -87,8 +87,8 @@ class _CategoryListState extends State<CategoryList> {
             Text('product')
           ],
         ),
-        const Column(
-          children: [
+        Column(
+          children: const [
             Padding(
               padding: EdgeInsets.all(6.0),
               child: CircleAvatar(

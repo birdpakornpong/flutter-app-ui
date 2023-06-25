@@ -25,7 +25,7 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
         ),
         body: Column(
           children: [
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(12.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

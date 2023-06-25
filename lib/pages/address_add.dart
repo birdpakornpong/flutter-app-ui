@@ -39,7 +39,7 @@ class _AddressAddState extends State<AddressAdd> {
             child: Column(children: [
               Container(
                 margin: const EdgeInsets.symmetric(vertical: 10.0),
-                child: const Row(
+                child: Row(
                   children: [
                     Text(
                       'ชื่อผู้ใช้',
@@ -58,7 +58,7 @@ class _AddressAddState extends State<AddressAdd> {
               ),
               Container(
                 margin: const EdgeInsets.symmetric(vertical: 10.0),
-                child: const Row(
+                child: Row(
                   children: [
                     Text(
                       'หมายเลขโทรศัพท์',
@@ -77,7 +77,7 @@ class _AddressAddState extends State<AddressAdd> {
               ),
               Container(
                 margin: const EdgeInsets.symmetric(vertical: 10.0),
-                child: const Row(
+                child: Row(
                   children: [
                     Text(
                       'จังหวัด',
