@@ -26,27 +26,37 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
         ),
         body: Column(
           children: [
-            Padding(
-              padding: EdgeInsets.all(12.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(Icons.add),
-                          Text('ที่อยู่จัดส่ง'),
-                        ],
-                      ),
-                      Text('มาลี 088 8181811'),
-                      Text('173 ถนนดินสอ แขวงเสาชิงช้า เขตพระนคร กรุงเทพ'),
-                    ],
-                  ),
-                  Icon(Icons.add, size: 20),
-                ],
+            GestureDetector(
+              child: Padding(
+                padding: EdgeInsets.all(12.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Icon(Icons.add),
+                            Text('ที่อยู่จัดส่ง'),
+                          ],
+                        ),
+                        Text('มาลี 088 8181811'),
+                        Text('173 ถนนดินสอ แขวงเสาชิงช้า เขตพระนคร กรุงเทพ'),
+                      ],
+                    ),
+                    Icon(Icons.add, size: 20),
+                  ],
+                ),
               ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) {
+                    return const AddressList();
+                  }),
+                );
+              },
             ),
             Expanded(
               child: ListView.builder(
