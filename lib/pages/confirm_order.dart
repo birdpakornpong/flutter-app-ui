@@ -1,4 +1,5 @@
 import 'package:eflutter_app/pages/address_list.dart';
+import 'package:eflutter_app/pages/payment.dart';
 import 'package:flutter/material.dart';
 
 import '../model/FoodMenu.dart';
@@ -79,32 +80,42 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
                           )
                         : Column(
                             children: [
-                              Padding(
-                                padding: EdgeInsets.all(12.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Icon(Icons.add),
-                                            Text('วิธีชำระเงิน'),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      children: [
-                                        Text('QR พร้อมเพย์/เลขบัญชี'),
-                                        Icon(Icons.add),
-                                      ],
-                                    ),
-                                  ],
+                              GestureDetector(
+                                child: Padding(
+                                  padding: EdgeInsets.all(12.0),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Icon(Icons.add),
+                                              Text('วิธีชำระเงิน'),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text('QR พร้อมเพย์/เลขบัญชี'),
+                                          Icon(Icons.add),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) {
+                                      return const Payment();
+                                    }),
+                                  );
+                                },
                               ),
                               Padding(
                                 padding: EdgeInsets.all(12.0),
