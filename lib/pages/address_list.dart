@@ -17,6 +17,8 @@ class _AddressListState extends State<AddressList> {
     FoodMenu(name: "กระเพราหมู", price: "500", img: 'assets/images/pown.jpeg'),
   ];
 
+  String? gender;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +28,7 @@ class _AddressListState extends State<AddressList> {
         body: ListView(
           children: [
             SizedBox(
-              height: 100,
+              height: menu.length * 131,
               child: ListView.builder(
                   itemCount: menu.length,
                   itemBuilder: (BuildContext context, int index) {
@@ -42,32 +44,63 @@ class _AddressListState extends State<AddressList> {
                             const BorderRadius.all(Radius.circular(0)),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        padding: EdgeInsets.all(20.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      width: 30,
+                                      height: 30,
+                                      child: Radio(
+                                          value: "male",
+                                          groupValue: gender,
+                                          onChanged: (value) {
+                                            setState(() {
+                                              gender = 'male';
+                                            }); //selected value
+                                          }),
+                                    ),
+                                    Text('ชื่อ - นามสกุล'),
+                                  ],
+                                ),
+                                Text(
+                                  'แก้ไข',
+                                  style: TextStyle(color: Colors.red),
+                                ),
+                              ],
+                            ),
+                            Text('เบอร์โทรศัพท์'),
+                            Text('รายละเอียดที่อยู่'),
                             Text('ชื่อ - นามสกุล'),
-                            Icon(Icons.add, size: 20),
                           ],
                         ),
                       ),
                     );
                   }),
             ),
-            SizedBox(
+            Container(
+                color: Colors.white,
                 width: MediaQuery.of(context).size.width * 0.5,
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: const RoundedRectangleBorder()),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) {
-                          return const AddressAdd();
-                        }),
-                      );
-                    },
-                    child: const Text('เพิ่มที่อยู่'))),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(40, 10, 40, 15),
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          shape: const RoundedRectangleBorder()),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return const AddressAdd();
+                          }),
+                        );
+                      },
+                      child: const Text('เพิ่มที่อยู่')),
+                )),
           ],
         ));
   }
